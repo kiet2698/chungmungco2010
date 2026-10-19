@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Ngày 20/10 - Cô Ngân</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #1a0b2e, #4a154b, #7b1fa2);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* --- INTRO MỞ MÀN HOÀNH TRÁNG --- */
+        #intro-screen {
+            position: absolute;
+            z-index: 30;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeOutIntro 1s ease 4s forwards;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 11, 46, 0.95);
+        }
+
+        .gift-box {
+            font-size: 80px;
+            animation: bounceGift 1.5s infinite alternate;
+            cursor: pointer;
+            pointer-events: auto;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+        }
+
+        @keyframes bounceGift {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        .intro-title {
+            font-size: 28px;
+            color: #ffd700;
+            margin-top: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255,215,0,0.5);
+            animation: pulseText 1.5s infinite;
+        }
+
+        @keyframes pulseText {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        @keyframes fadeOutIntro {
+            0% { opacity: 1; visibility: visible; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        /* --- KHUNG CUỘN BÀI THƠ / LỜI CHÚC --- */
+        #poem-container {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 10;
+            animation: fadeInMain 1.5s ease forwards;
+        }
+
+        @keyframes fadeInMain {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #poem-scroll {
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            animation: scrollUp 40s linear forwards;
+            padding: 0 30px;
+        }
+
+        @keyframes scrollUp {
+            0% { top: 100%; }
+            100% { top: -140%; }
+        }
+
+        .poem-line {
+            font-size: 23px;
+            line-height: 2.6;
+            margin-bottom: 14px;
+            text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+            font-weight: 400;
+            color: #fce4ec;
+        }
+
+        .highlight-title {
+            font-size: 34px;
+            color: #ffd700;
+            font-weight: bold;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px rgba(255,215,0,0.6);
+        }
+
+        .highlight-name {
+            font-size: 38px;
+            color: #ff4081;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255,64,129,0.8);
+        }
+
+        .highlight-teacher {
+            color: #00e5ff;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0,229,255,0.6);
+        }
+
+        .final-wish {
+            font-size: 26px;
+            color: #ff80ab;
+            font-style: italic;
+            margin-top: 35px;
+            margin-bottom: 60px;
+            line-height: 2.2;
+        }
+
+        /* --- HIỆU ỨNG CƠN MƯA HOA & TRÁI TIM --- */
+        .heart {
+            position: absolute;
+            top: -10%;
+            z-index: 2;
+            user-select: none;
+            pointer-events: none;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) translateX(60px) rotate(360deg);
+                opacity: 0.15;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Màn hình Intro mở đầu siêu xịn -->
+    <div id="intro-screen">
+        <div class="gift-box">🎁</div>
+        <div class="intro-title">Chạm để mở món quà tri thức... ✨</div>
+    </div>
+
+    <!-- Khung chứa nội dung lời chúc chạy thước phim -->
+    <div id="poem-container">
+        <div id="poem-scroll">
+            <div class="poem-line highlight-title">🌸 Kính Gửi Cô Ngân Yêu Quý 🌸</div>
+            <div class="poem-line">Nhân ngày Phụ nữ Việt Nam <span class="highlight-teacher">20/10</span></div>
+            <div class="poem-line">Em xin gửi đến cô những lời chúc chân thành</div>
+            <div class="poem-line">Và tốt đẹp nhất! ❤️</div>
+            <div class="poem-line">Em chúc cô luôn mạnh khỏe, bình an, hạnh phúc</div>
+            <div class="poem-line">Và mãi giữ được nụ cười rạng rỡ trên môi ✨</div>
+            <div class="poem-line">Mong cô sẽ luôn gặp thật nhiều niềm vui</div>
+            <div class="poem-line">Luôn được yêu thương và trân trọng mỗi ngày 🌷</div>
+            <div class="poem-line highlight-name">Chúc cô Ngân một ngày 20/10 thật ý nghĩa!</div>
+            <div class="poem-line">Một cuộc đời ngập tràn hạnh phúc</div>
+            <div class="poem-line">Và luôn tự hào về những hạt mầm tri thức</div>
+            <div class="poem-line">Mà cô đã tận tụy gieo trồng suốt bao năm qua 🌿📚</div>
+            <div class="poem-line final-wish">Trân trọng và biết ơn cô rất nhiều! 💖💐</div>
+        </div>
+    </div>
+
+    <script>
+        const introScreen = document.getElementById('intro-screen');
+        const poemContainer = document.getElementById('poem-container');
+        const giftBox = document.querySelector('.gift-box');
+
+        // Bấm vào hộp quà hoặc tự động chạy intro sau 4 giây
+        let startTimeout = setTimeout(triggerExperience, 4000);
+
+        giftBox.addEventListener('click', () => {
+            clearTimeout(startTimeout);
+            triggerExperience();
+        });
+
+        function triggerExperience() {
+            introScreen.style.animation = 'fadeOutIntro 0.5s ease forwards';
+            setTimeout(() => {
+                introScreen.style.display = 'none';
+                poemContainer.style.display = 'block';
+                startHeartRain();
+            }, 500);
+        }
+
+        // Cơn mưa hiệu ứng trái tim, hoa hồng, ngôi sao lấp lánh cực mượt
+        function startHeartRain() {
+            const symbols = ['🌸', '💖', '✨', '🌹', '💐', '⭐', '❤️', '🌷'];
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 3.5) + 's';
+                heart.style.fontSize = (Math.random() * 24 + 16) + 'px';
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 7000);
+            }, 180);
+        }
+    </script>
+</body>
+</html>
